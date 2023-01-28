@@ -1,20 +1,19 @@
-const mySql = require('mysql')
+const conn = require("./sqlcon");
+const app = require('./appexpCon');
 
-const conn = mySql.createConnection({
 
-    host:"localhost",
-    user:"singh12345",
-    password:"singh12345",
-    database:"singhAcount"
-})
-
-conn.connect((err) => {
-    if(err) throw err;
-    console.log("connected")
-    var qury = "DROP TABLE expense"
+function deleteTable(){
+app.get("/api/delete_row/exp/:cid/:id",(req,res) =>{
+  conn.ping((err) => {
+    if (err) return res.status(500).send("MySQL Server is Down");
+    var qury = "DELETE FROM expense WHERE id = "+req.params.id+"";
     conn.query(qury, (err, result) => {
-        if(err) throw err;
-        console.log('Table Created')
-
+      if (err) return res.send(err);
+      //console.log("Table Deleted");
+      res.send("Delete Row "+req.params.id);
     });
+  });
 });
+}
+
+module.exports = deleteTable;

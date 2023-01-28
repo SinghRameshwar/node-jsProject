@@ -1,6 +1,25 @@
 {
   "dependencies": {
     "express": "^4.18.2",
-    "mysql": "^2.18.1"
-  }
+    "mysql": "^2.18.1",
+    "pg": "^8.8.0"
+  },
+  "name": "mysqltest",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SinghRameshwar/https---github.com-SinghRameshwar-node-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SinghRameshwar/https---github.com-SinghRameshwar-node-js/issues"
+  },
+  "homepage": "https://github.com/SinghRameshwar/https---github.com-SinghRameshwar-node-js#readme",
+  "description": ""
 }
