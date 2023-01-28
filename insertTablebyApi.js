@@ -3,8 +3,8 @@ const conn = require("./sqlcon");
 
 function insertData() {
   app.get("/api/insert/exp/:id/:expType/:expAmt", (req, res) => {
-   // conn.ping((err) => {
-     // if (err) return res.status(500).send("MySQL Server is Down");
+   conn.ping((err) => {
+     if (err) return res.status(500).send("MySQL Server is Down");
 
       // console.log("Connected!");
       var sql =
@@ -38,7 +38,7 @@ function insertData() {
         res.send(req.params.expType + " Insert in DataBase");
       });
     });
- // });
+  });
 }
 
 module.exports = insertData;
